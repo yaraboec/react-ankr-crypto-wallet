@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Card from "components/card/card";
+import Converter from "components/converter/converter";
+import Balances from "components/balances/balances";
+import { useAppSelector } from "hooks/state";
+
+import "./App.scss";
 
 function App() {
+  const balances = useAppSelector((state) => state.balances.balances);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card header="Tokens Converter">
+        <Converter />
+      </Card>
+      <Card header="Balances" hidden={!balances.length}>
+        <Balances />
+      </Card>
     </div>
   );
 }

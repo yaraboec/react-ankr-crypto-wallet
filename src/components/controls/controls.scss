@@ -1,0 +1,15 @@
+.controls {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: #fff;
+  padding-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .filter-input,
+  .sorting-select {
+    max-width: 200px;
+  }
+}

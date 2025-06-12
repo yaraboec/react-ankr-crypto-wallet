@@ -1,0 +1,18 @@
+.balances {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  font-size: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+
+  .card {
+    width: auto;
+
+    .card-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}

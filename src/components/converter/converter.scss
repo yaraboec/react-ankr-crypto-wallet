@@ -1,0 +1,27 @@
+.converter {
+  .selectors {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    column-gap: 10px;
+
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      z-index: 1031;
+    }
+  }
+
+  .submit {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    .get-balances-button {
+      margin-left: 280px;
+    }
+    .spinner {
+      margin-left: 20px;
+    }
+  }
+}
