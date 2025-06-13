@@ -55,7 +55,9 @@ export default function Refresher({
           setAutoRefresh((prev) => !prev);
         }}
       >
-        {autoRefresh ? `Auto-Refresh (${secondsLeft}s)` : "Auto-Refresh"}
+        {autoRefresh && canRefresh
+          ? `Auto-Refresh (${secondsLeft}s)`
+          : "Auto-Refresh"}
       </Button>
     </div>
   );

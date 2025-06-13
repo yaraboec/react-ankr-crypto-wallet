@@ -63,7 +63,13 @@ export default function Converter() {
   };
 
   const canRefresh = (): boolean => {
-    if (!isLoading && isNetworkAvailable && address && blockchain) {
+    if (
+      !isLoading &&
+      isNetworkAvailable &&
+      address &&
+      isAddressValid &&
+      blockchain
+    ) {
       return true;
     }
     return false;
@@ -105,7 +111,13 @@ export default function Converter() {
         <Button
           className="get-balances-button"
           onClick={getBalances}
-          disabled={isLoading || !isNetworkAvailable || !address || !blockchain}
+          disabled={
+            isLoading ||
+            !isNetworkAvailable ||
+            !address ||
+            !blockchain ||
+            !isAddressValid
+          }
         >
           Get balances
         </Button>
