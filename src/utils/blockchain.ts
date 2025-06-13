@@ -53,5 +53,5 @@ export const getTokenAmount = (
     outputTokenAmount = inputTokenBalanceRaw.dividedBy(outputTokenPriceRaw);
   }
 
-  return outputTokenAmount.toString();
+  return outputTokenAmount.toFixed();
 };
