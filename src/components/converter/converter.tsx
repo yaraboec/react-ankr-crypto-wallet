@@ -75,6 +75,13 @@ export default function Converter() {
     return false;
   };
 
+  const canGetBalances = (): boolean =>
+    isLoading ||
+    !isNetworkAvailable ||
+    !address ||
+    !blockchain ||
+    !isAddressValid;
+
   return (
     <div className="converter">
       <div className="selectors">
@@ -111,13 +118,7 @@ export default function Converter() {
         <Button
           className="get-balances-button"
           onClick={getBalances}
-          disabled={
-            isLoading ||
-            !isNetworkAvailable ||
-            !address ||
-            !blockchain ||
-            !isAddressValid
-          }
+          disabled={canGetBalances()}
         >
           Get balances
         </Button>
